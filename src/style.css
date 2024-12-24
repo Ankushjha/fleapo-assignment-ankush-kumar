@@ -1,5 +1,7 @@
+/* Google Montserrat font import with all weights and styles */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* Global reset styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,6 +9,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
+/* Main container with full viewport dimensions and gradient background */
 .container {
   height: 100vh;
   width: 100vw;
@@ -15,11 +18,13 @@
   padding: 60px;
 }
 
+/* Flex row layout with gap */
 .row {
   display: flex;
   gap: 30px;
 }
 
+/* Main content section styles */
 .main-content {
   display: flex;
   flex-direction: column;
@@ -29,18 +34,21 @@
   margin-bottom: 60px;
 }
 
+/* Course section tag styling */
 .main-content h6 {
   color: #96bb7c;
   font-size: 14px;
   line-height: 24px;
 }
 
+/* Main section title styling */
 .main-content > h2 {
   color: #fff;
   font-size: 40px;
   line-height: 50px;
 }
 
+/* Description text styling */
 .main-content p {
   color: #f6f6f6;
   font-size: 14px;
@@ -49,12 +57,12 @@
   word-wrap: break-word;
 }
 
+/* Desktop visibility utility class */
 .desktop-show {
   display: initial;
 }
 
-/* card body css below  */
-
+/* Card container scrollbar customization */
 .card-container::-webkit-scrollbar {
   display: none;
 }
@@ -64,11 +72,13 @@
   scrollbar-width: none;
 }
 
+/* Individual card dimensions */
 .card {
   width: 238px;
   height: 602px;
 }
 
+/* Alternating card border radius styles */
 .row .card:nth-child(odd) .product-card,
 .row .card:nth-child(odd) .product-card .product-card-header {
   border-top-left-radius: 15px;
@@ -80,6 +90,7 @@
   border-radius: 0;
 }
 
+/* Card background images */
 .product-card-1 {
   background-image: url("./images/card-1.jpeg");
 }
@@ -101,18 +112,16 @@
   background-image: url("./images/card-1.jpeg");
 }
 
+/* Card header with background image settings */
 .product-card-header {
   position: relative;
   height: 300px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* border-top-left-radius: 15px;
-  border-top-right-radius: 15px; */
 }
 
-/* inside product card header css added below  */
-/* sale tag css below  */
+/* Sale tag positioning and styling */
 .product-card-header .sale-tag {
   position: absolute;
   background-color: #e74040;
@@ -130,7 +139,7 @@
   text-align: center;
 }
 
-/* card icons css added below  */
+/* Action icons container */
 .icons {
   position: absolute;
   top: 246px;
@@ -138,6 +147,7 @@
   display: flex;
   gap: 10px;
 
+  /* Common icon styles */
   .icon {
     color: #fff;
     width: 40px;
@@ -152,13 +162,12 @@
     }
   }
 
-  /* like icon css color  */
+  /* Icon-specific gradient backgrounds */
   .like-icon {
     background: linear-gradient(270deg, #ff0000 0%, #0000ff 100%);
     color: #bdbdbd;
   }
 
-  /* card icon css color  */
   .basket-icon {
     background: linear-gradient(
       270deg,
@@ -168,12 +177,12 @@
     );
   }
 
-  /* eye icon css color  */
   .eye-icon {
     background: linear-gradient(270deg, #ffff00 0%, #008000 100%);
   }
 }
 
+/* Card body container */
 .product-card-body {
   background-color: #fff;
   width: 100%;
@@ -184,6 +193,7 @@
   flex-direction: column;
   gap: 10px;
 
+  /* Course type and rating container */
   .course-type-section {
     width: 188px;
     display: flex;
@@ -201,6 +211,7 @@
       }
     }
 
+    /* Rating badge */
     .course-rating {
       background-color: #2d4059;
       width: 50px;
@@ -222,6 +233,7 @@
     }
   }
 
+  /* Card content typography */
   h5 {
     color: #252b42;
     font-weight: 700;
@@ -236,6 +248,7 @@
     line-height: 20px;
   }
 
+  /* Sales indicator */
   .product-sales {
     color: #737373;
     display: flex;
@@ -252,6 +265,7 @@
     }
   }
 
+  /* Price display */
   .price {
     padding: 5px 3px;
     display: flex;
@@ -271,6 +285,7 @@
     }
   }
 
+  /* Learn More button */
   button {
     display: block;
     width: 141px;
@@ -287,8 +302,7 @@
   }
 }
 
-/* Mobile View CSS below  */
-
+/* Mobile responsiveness */
 @media only screen and (max-width: 480px) {
   .container {
     background-color: lightblue;
@@ -305,7 +319,6 @@
 
   .main-content > p {
     width: 369px;
-    /* I need to add this width as it was breaking the design as per figma  */
     word-wrap: break-word;
   }
 

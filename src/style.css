@@ -12,10 +12,12 @@
   width: 100vw;
   overflow-x: hidden;
   background: radial-gradient(#0037ff00, #0084ff);
+  padding: 60px;
 }
 
 .row {
-  margin: 44px 36px;
+  display: flex;
+  gap: 30px;
 }
 
 .main-content {
@@ -24,6 +26,7 @@
   gap: 10px;
   width: 691px;
   letter-spacing: 0.2px;
+  margin-bottom: 60px;
 }
 
 .main-content h6 {
@@ -43,90 +46,131 @@
   font-size: 14px;
   line-height: 20px;
   width: 463px;
+  word-wrap: break-word;
 }
 
-.col-md-3 {
+.desktop-show {
+  display: initial;
+}
+
+/* card body css below  */
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card-container {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.card {
   width: 238px;
   height: 602px;
 }
 
-.col-md-3 .product-card:nth-child(odd) {
+.row .card:nth-child(odd) .product-card,
+.row .card:nth-child(odd) .product-card .product-card-header {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+}
+
+.row .card:nth-child(even) .product-card,
+.row .card:nth-child(even) .product-card .product-card-header {
+  border-radius: 0;
+}
+
+.product-card-1 {
+  background-image: url("./images/card-1.jpeg");
+}
+
+.product-card-2 {
+  background-image: url("./images/card-2.jpeg");
+}
+.product-card-3 {
+  background-image: url("./images/card-3.jpeg");
+}
+.product-card-4 {
+  background-image: url("./images/card-4.jpeg");
+}
+.product-card-5 {
+  background-image: url("./images/card-6.jpeg");
+}
+
+.product-card-6 {
+  background-image: url("./images/card-1.jpeg");
 }
 
 .product-card-header {
   position: relative;
   height: 300px;
-  background-image: url("./images/card-1.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  /* border-top-left-radius: 15px;
+  border-top-right-radius: 15px; */
+}
 
-  /* inside product card header css added below  */
-  /* sale tag css below  */
-  .sale-tag {
-    position: absolute;
-    background-color: #e74040;
-    box-shadow: 0px 2px 4px 0px #0000001a;
-    border-radius: 3px;
-    top: 20px;
-    left: 20px;
-    padding: 0 10px;
+/* inside product card header css added below  */
+/* sale tag css below  */
+.product-card-header .sale-tag {
+  position: absolute;
+  background-color: #e74040;
+  box-shadow: 0px 2px 4px 0px #0000001a;
+  border-radius: 3px;
+  top: 20px;
+  left: 20px;
+  padding: 0 10px;
+}
+.product-card-header .sale-tag h6 {
+  color: #fff;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  font-size: 14px;
+  text-align: center;
+}
 
-    h6 {
-      color: #fff;
-      line-height: 24px;
-      letter-spacing: 0.2px;
-      font-size: 14px;
-      text-align: center;
+/* card icons css added below  */
+.icons {
+  position: absolute;
+  top: 246px;
+  left: 49px;
+  display: flex;
+  gap: 10px;
+
+  .icon {
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      font-size: 20px;
     }
   }
 
-  /* card icons css added below  */
-  .icons {
-    position: absolute;
-    top: 246px;
-    left: 49px;
-    display: flex;
-    gap: 10px;
+  /* like icon css color  */
+  .like-icon {
+    background: linear-gradient(270deg, #ff0000 0%, #0000ff 100%);
+    color: #bdbdbd;
+  }
 
-    .icon {
-      color: #fff;
-      width: 40px;
-      height: 40px;
-      border-radius: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  /* card icon css color  */
+  .basket-icon {
+    background: linear-gradient(
+      270deg,
+      #800080 0%,
+      #bd4f42 48.12%,
+      #ffa500 100%
+    );
+  }
 
-      i {
-        font-size: 20px;
-      }
-    }
-
-    /* like icon css color  */
-    .like-icon {
-      background: linear-gradient(270deg, #ff0000 0%, #0000ff 100%);
-      color: #bdbdbd;
-    }
-
-    /* card icon css color  */
-    .basket-icon {
-      background: linear-gradient(
-        270deg,
-        #800080 0%,
-        #bd4f42 48.12%,
-        #ffa500 100%
-      );
-    }
-
-    /* eye icon css color  */
-    .eye-icon {
-      background: linear-gradient(270deg, #ffff00 0%, #008000 100%);
-    }
+  /* eye icon css color  */
+  .eye-icon {
+    background: linear-gradient(270deg, #ffff00 0%, #008000 100%);
   }
 }
 
@@ -134,7 +178,6 @@
   background-color: #fff;
   width: 100%;
   height: 302px;
-  border-bottom-right-radius: 15px;
   padding: 25px;
   padding-bottom: 35px;
   display: flex;
@@ -237,11 +280,36 @@
     border: 1px solid #96bb7c;
     padding: 10px 20px;
 
-    h6 {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0.2px;
-    }
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+  }
+}
+
+/* Mobile View CSS below  */
+
+@media only screen and (max-width: 480px) {
+  .container {
+    background-color: lightblue;
+  }
+
+  .main-content {
+    width: 408px;
+  }
+
+  .main-content > h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .main-content > p {
+    width: 369px;
+    /* I need to add this width as it was breaking the design as per figma  */
+    word-wrap: break-word;
+  }
+
+  .hide {
+    display: none;
   }
 }
